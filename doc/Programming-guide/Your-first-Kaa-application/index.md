@@ -15,44 +15,44 @@ Main principles of the Kaa platform operation are exemplified by a practical cas
 
 To learn more about Kaa features, see [Further reading](#further-reading).
 
-## Prerequisites
+## 先决条件 
 
 To register a new [application]({{root_url}}Glossary/#kaa-application) within a fresh [Kaa server]({{root_url}}Glossary/#kaa-server) installation, you need to create users with the [tenant administrator]({{root_url}}Administration-guide/Tenants-and-applications-management/#tenant-admin) and [tenant developer]({{root_url}}Administration-guide/Tenants-and-applications-management/#tenant-developer) roles.
-Tenant administrator creates new applications in Kaa.
-Tenant developer configures and generates SDKs for those applications.
+Tenant administrator 在Kaa中创建新的应用程序.
+Tenant developer 为这些应用程序配置和生成SDKs.
 It is recommended that you use the Kaa Sandbox that already includes a tenant administrator and a tenant developer.
 
-To learn how to install the Kaa Sandbox, see [Getting started]({{root_url}}Getting-started/).
+学习怎么安装Kaa Sandbox, 详见 [Getting started]({{root_url}}Getting-started/).
 
-## Application description
+## 应用程序描述
 
-To demonstrate the process of creating a Kaa-based application, let's create an application where sensor devices transmit temperature data to the server.
-To make your application more efficient, you can configure it so that the data transmissions occur at various sampling periods set by the user.
+为了演示创建基于Kaa的应用程序的过程，让我们创建一个应用程序，其中传感器设备向服务器发送温度数据.
+为了使您的应用程序更高效，可以配置它，以便数据传输发生在用户设置的各种采样周期内.
 
-To achieve this, two Kaa features will be used:
+为了实现这一点，将使用两个Kaa feature:
 
-- **Data collection** feature allows sending data from [endpoints]({{root_url}}Glossary/#endpoint-ep) to the Kaa server.
-In this example, the Data collection feature will be used to transmit temperature values at a configured sample period.
+- **Data collection** feature 允许从 [endpoints]({{root_url}}Glossary/#endpoint-ep) 发送数据到Kaa服务器.
+在这个示例中，数据收集特征将被用于在配置的采样周期发送温度值.
 
-- **Configuration** feature allows broadcasting configuration parameters from the Kaa server to Kaa endpoints.
-In this example, the Configuration feature will be used to send the sampling period values from Kaa server to the temperature sensors.
+- **Configuration** feature 允许广播配置参数从Kaa服务器到终端.
+在这个例子中，配置特征将用于将采样周期值从Kaa服务器发送到温度传感器.
 
-## Add application
+## 添加应用程序
 
-To add an application:
+添加一个应用程序:
 
-1. On the Sandbox main page, click **Administration UI** and log in as a [tenant administrator]({{root_url}}Glossary/#tenant-administrator) using default **admin** username and **admin123** password.
+1. 在 Sandbox主页面, 点击 **Administration UI** 并用 [tenant administrator]({{root_url}}Glossary/#tenant-administrator) 账号登陆 默认 **admin** 用户名 和 **admin123** 密码.
 
-2. On the **Administration UI** page, click **Add application**.
+2. 在 **Administration UI** 页面, 点击 **Add application**.
 
-3. On the **Application details** page, enter a title for your new application, select a credentials service and click **Add**.
+3. 在 **Application details** 页面, 填入您的新应用程序的标题, 选择一个credentials service 并点击 **Add**.
 
 	![Administration UI](attach/new_app.png)
 
-## Create schemas
+## 创建 schemas
 
-The application you just created already includes default versions of the profile, configuration, notification, and log schemas ready for use.
-However, you can create custom data collection and configuration schemas.
+刚刚创建的应用程序已经包括准备好使用的配置文件、配置、通知和日志模式的默认版本。The application you just created already includes default versions of the profile, configuration, notification, and log schemas ready for use.
+但是，您可以创建自定义数据收集和configuration schemas.
 
 To create and upload custom schemas:
 
