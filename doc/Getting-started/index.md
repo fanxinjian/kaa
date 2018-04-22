@@ -22,7 +22,7 @@ The setup instructions are also available as a video tutorial below.
 </p>
 
 
-## Sandbox installation
+## Sandbox 安装
 
 To run your Kaa Sandbox, you can use the VirtualBox environment or AWS Elastic Compute Cloud (EC2).
 Click the appropriate tab and follow the instructions.
@@ -139,12 +139,12 @@ Also, one log file generated per each initialization and each shutdown of a Kaa 
 
 </div></div>
 
-## Launching your first Kaa application
+## 运行您的第一个Kaa应用程序
 
-After you installed a Kaa Sandbox, you can test its features by using the [sample applications](https://github.com/kaaproject/sample-apps).
-By default, your Kaa Sandbox will listen to port 9080 to access the sample applications and some basic configuration data.
-Using the Sandbox, you can download the source codes of any sample applications.
-For sample applications based on Java or Android SDK, you can also download the binary files.
+安装完Kaa Sandbox后, 您可以用[sample applications](https://github.com/kaaproject/sample-apps)测试功能.
+默认的, 您的 Kaa Sandbox 监听9080端口用来访问示例应用程序和一些基本配置数据.
+使用Sandbox, 您可以下载很多示例应用程序的源代码.
+基于java或Android SDK的示例应用程序，您还可以下载二进制文件.
 
 To work with your specific Kaa instance, use the Sandbox to download an [SDK library]({{root_url}}Programming-guide/Using-Kaa-endpoint-SDKs/) and deploy it to your [endpoint]({{root_url}}Glossary/#endpoint-ep).
 
