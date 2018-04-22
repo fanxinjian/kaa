@@ -51,8 +51,8 @@ It is recommended that you use the Kaa Sandbox that already includes a tenant ad
 
 ## 创建 schemas
 
-刚刚创建的应用程序已经包括准备好使用的配置文件、配置、通知和日志模式的默认版本。The application you just created already includes default versions of the profile, configuration, notification, and log schemas ready for use.
-但是，您可以创建自定义数据收集和configuration schemas.
+刚刚创建的应用程序已经包括准备好使用的配置文件、配置、通知和日志模式的默认版本.
+但是，您可以创建自定义数据收集和配置 schemas.
 
 To create and upload custom schemas:
 
@@ -88,11 +88,11 @@ The `by_default` parameter defines the default sampling period value which is se
 		
 3. Use the **Upload from file** section to [create CT schemas]({{root_url}}Programming-guide/Key-platform-features/Common-Type-Library/#create-a-new-ct) of Application scope from the `data-schema.json` and `configuration-schema.json` files.
 
-4. On the Sandbox main page, click **Administration UI** and log in as a [tenant developer]({{root_url}}Glossary/#tenant-developer) using default **devuser** username and **devuser123** password.
+4. 在 Sandbox 主页, 点击 **Administration UI** 使用[tenant developer]({{root_url}}Glossary/#tenant-developer) 账号登陆 默认 **devuser** 用户名 和 **devuser123** 密码.
 
-5. Click the **Applications** arrow to unfold the list and click the arrow of the application you created in [Add application](#add-application), then click **Schemas** > **Log** and click the **Add schema** button.
+5. 点击**Applications** arrow to unfold the list and click the arrow of the application you created in [Add application](#add-application), 然后 点击**Schemas** > **Log** 并点击 **Add schema** 按钮.
 
-6. On the **Add log schema** page, enter a name and description of the new data collection schema and select the CT created from the `data-schema.json` file.
+6. 在 **Add log schema** 页面, enter a name and description of the new data collection schema and select the CT created from the `data-schema.json` file.
 
 	![Data collection schema](attach/new_data_schema2.png)
 
@@ -121,9 +121,9 @@ To use the data collection feature, you need to set up a **Log appender**.
 In this example, the MongoDB log appender is used.
 For more information, see [MongoDB log appender]({{root_url}}Programming-guide/Key-platform-features/Data-collection/MongoDB-log-appender).
 
-## Generate SDK
+## 生成 SDK
 
-To generate an SDK for your new application:
+为新的应用程序生成一个SDK:
 
 1. Select your new application in the **Applications** list and click the **Generate SDK** button.
 
@@ -159,7 +159,7 @@ In the **Generate SDK** window, select the target platform for your SDK and clic
 >If necessary, you can overwrite them using the Administration UI.
 {: .note}
 
-## Sample client application
+## 示例客户端应用程序
 
 Once you downloaded the SDK, you can use it in your sample project.
 The following section will illustrate a simple desktop application that sends temperature data from Kaa endpoint to Kaa server at a sampling period set by the user.
