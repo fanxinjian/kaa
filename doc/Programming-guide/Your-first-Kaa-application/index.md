@@ -9,19 +9,16 @@ sort_idx: 10
 
 * TOC
 {:toc}
+本节讨论使用 [Kaa Sandbox]({{root_url}}Glossary/#kaa-sandbox)创建Kaa基本的应用程序。
+通过从传感器设备收集数据的实际案例, 举例说明了Kaa平台操作的主要原则.
 
-This section discusses the basics of creating Kaa-based applications using the [Kaa Sandbox]({{root_url}}Glossary/#kaa-sandbox).
-Main principles of the Kaa platform operation are exemplified by a practical case of collecting data from sensor devices.
-
-To learn more about Kaa features, see [Further reading](#further-reading).
+进一步了解 Kaa, 请 参阅[Further reading](#further-reading).
 
 ## 先决条件 
-
-To register a new [application]({{root_url}}Glossary/#kaa-application) within a fresh [Kaa server]({{root_url}}Glossary/#kaa-server) installation, you need to create users with the [tenant administrator]({{root_url}}Administration-guide/Tenants-and-applications-management/#tenant-admin) and [tenant developer]({{root_url}}Administration-guide/Tenants-and-applications-management/#tenant-developer) roles.
-Tenant administrator 在Kaa中创建新的应用程序.
-Tenant developer 为这些应用程序配置和生成SDKs.
-It is recommended that you use the Kaa Sandbox that already includes a tenant administrator and a tenant developer.
-
+要在全新的[Kaa server]({{root_url}}Glossary/#kaa-server) 安装注册新的 [application]({{root_url}}Glossary/#kaa-application) , 需要创建具有 [tenant administrator]({{root_url}}Administration-guide/Tenants-and-applications-management/#tenant-admin) 和 [tenant developer]({{root_url}}Administration-guide/Tenants-and-applications-management/#tenant-developer) 角色的用户。
+Tenant administrator 用户 在Kaa中创建新的应用程序.
+Tenant developer 用户 为创建的应用程序配置和生成SDKs.
+建议您使用Kaa Sandbox默认生成的 tenant administrator 和 a tenant developer账号。
 学习怎么安装Kaa Sandbox, 详见 [Getting started]({{root_url}}Getting-started/).
 
 ## 应用程序描述
@@ -54,9 +51,9 @@ It is recommended that you use the Kaa Sandbox that already includes a tenant ad
 刚刚创建的应用程序已经包括准备好使用的配置文件、配置、通知和日志模式的默认版本.
 但是，您可以创建自定义数据收集和配置 schemas.
 
-To create and upload custom schemas:
+创建和上传自定义schemas:
 
-1. Create a `data-schema.json` file containing the following schema definition.
+1. 创建一个文件 `data-schema.json`包含下面内容.
 
 		{
 			"type": "record",
@@ -70,7 +67,7 @@ To create and upload custom schemas:
 			]
 		}
 		
-2. Create a `configuration-schema.json` file containing the following schema definition.
+2. 创建一个文件  `configuration-schema.json` 包含下面内容.
 The `by_default` parameter defines the default sampling period value which is set to **1** in this example case.
 
 		{
@@ -90,33 +87,35 @@ The `by_default` parameter defines the default sampling period value which is se
 
 4. 在 Sandbox 主页, 点击 **Administration UI** 使用[tenant developer]({{root_url}}Glossary/#tenant-developer) 账号登陆 默认 **devuser** 用户名 和 **devuser123** 密码.
 
-5. 点击**Applications** arrow to unfold the list and click the arrow of the application you created in [Add application](#add-application), 然后 点击**Schemas** > **Log** 并点击 **Add schema** 按钮.
+5. 点击**Applications** 的箭头展开下级内容 点击刚才你创建的 [Add application](#add-application), 然后 点击**Schemas** > **Log** 并点击 **Add schema** 按钮.
 
-6. 在 **Add log schema** 页面, enter a name and description of the new data collection schema and select the CT created from the `data-schema.json` file.
+6. 在 **Add log schema** 页面, 为数据收集schema填入一个名字和描述并选择一个从 `data-schema.json`文件创建的CT .
 
 	![Data collection schema](attach/new_data_schema2.png)
 
-7. Click the **Add** button at the top of the page.
+7. 点击页面顶部的 **Add** 按钮.
 
->**NOTE:** Alternatively, you can use the [Avro UI form]({{root_url}}Glossary/#avro-ui-form) to create the schema.
+>**注意:**或者, 也可以使用 [Avro UI form]({{root_url}}Glossary/#avro-ui-form)窗体来创建schema。 
 {: .note}
 
-To create a configuration schema repeat the same procedure using the `configuration-schema.json` file.
+请使用`configuration-schema.json` 文件重复相同的过程创建配置schema .
+
 
 ![Add configuration schema](attach/new_config_schema2.png)
 
-As a result, your configuration and data collection schemas will appear in the list.
-Note that every time you add a new schema, Kaa assigns a new version number to it.
-In this example, the log and configuration schemas are version 2.
-Your version numbers may differ from this example.
+配置完成后, 你的配置和数据收集schemas 将显示在列表上.
+请注意 每次添加 schema ,Kaa都会为其分配一个新的版本号.
+
+在这个示例中, 日志和配置schemas是 version 2.
+你的版本数字可能和示例中的不同.
 
 ![Data collection schema complete](attach/log_schema_list.png)
 ![Configuraion schema complete](attach/config_schema_list.png)
+稍后将需要版本号来生成 SDK。
 
-The version number will be required later to generate an SDK.
 
-## Set up log appender
-
+## 设置日志数据库
+若要使用数据收集功能, 需要设置日志附加目的地。
 To use the data collection feature, you need to set up a **Log appender**.
 In this example, the MongoDB log appender is used.
 For more information, see [MongoDB log appender]({{root_url}}Programming-guide/Key-platform-features/Data-collection/MongoDB-log-appender).
